@@ -205,7 +205,7 @@ class ControllerAndPropertiesTest {
     void testSaveCustomer() throws Exception {
         given(customerService.save(any())).willReturn(sampleCustomerForCustomerControllerTest);
 
-        CustomerResponse expectedResponse = new CustomerResponse(sampleCustomerForCustomerControllerTest.getId(), sampleCustomerForCustomerControllerTest.getEmail(), sampleCustomerForCustomerControllerTest.getSalary());
+        CustomerResponse expectedResponse = new CustomerResponse((int) sampleCustomerForCustomerControllerTest.getId(), sampleCustomerForCustomerControllerTest.getEmail(), sampleCustomerForCustomerControllerTest.getSalary());
 
         mockMvc.perform(post("/customer")
                         .contentType(MediaType.APPLICATION_JSON)
